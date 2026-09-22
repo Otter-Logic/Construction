@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OtterLogic.Construction</RootNamespace>
+    <AssemblyName>OtterLogic.Construction</AssemblyName>
+    <!-- A domain toolkit: building the structure once it is designed - the order
+         its pieces go up in, and seeing that order happen. Named for the domain
+         it has an opinion about. How the model is read - what rests on what -
+         lives one layer down in OtterLogic.StructuralEngine, shared with
+         StructuralDesign and Fabrication, so a sequence and an analysis can
+         never disagree. No UI, no Grasshopper, and no dependency on a sibling
+         toolkit. The Grasshopper section is "Construction". -->
+
+    <IsPackable>true</IsPackable>
+    <PackageId>OtterLogic.Construction</PackageId>
+    <Description>Construction tools for the OtterLogic Rhino tools - the order a structure's pieces can go up in, read from its geometry and supports, and a timeline to play it.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Otter-Logic/Construction</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Otter-Logic/Construction</RepositoryUrl>
+    <PackageTags>rhino;rhino3d;grasshopper;computational-design;structural;construction;erection</PackageTags>
+
+  </PropertyGroup>
+
+  <!-- A sibling checkout wins; the published package is the fallback. Clone the
+       repos side by side and the inner loop is unchanged; CI has no siblings, so
+       it builds against the published packages. -->
+  <Choose>
+    <When Condition="Exists('$(MSBuildThisFileDirectory)..\..\..\StructuralEngine\src\OtterLogic.StructuralEngine\OtterLogic.StructuralEngine.csproj')">
+      <ItemGroup>
+        <ProjectReference Include="..\..\..\StructuralEngine\src\OtterLogic.StructuralEngine\OtterLogic.StructuralEngine.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="OtterLogic.StructuralEngine" Version="[$(Version)]" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+</Project>

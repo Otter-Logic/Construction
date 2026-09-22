@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/OtterLogic.Construction/OtterLogic.Construction.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OtterLogic.Construction.Tests/OtterLogic.Construction.Tests.csproj" />
+  </Folder>
+</Solution>
