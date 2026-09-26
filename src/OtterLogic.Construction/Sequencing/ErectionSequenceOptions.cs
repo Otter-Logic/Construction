@@ -20,7 +20,7 @@ public sealed record ErectionSequenceOptions
 
     /// <summary>
     /// How close two element ends must be to weld into one joint. Ten tolerances by
-    /// default, the same as the Insight engine uses, so a model the engine reads as
+    /// default, the same as Section Groups uses, so a model it reads as
     /// joined is sequenced as joined — the two must never disagree about what rests
     /// on what.
     /// </summary>

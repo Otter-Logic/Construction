@@ -15,7 +15,7 @@ namespace OtterLogic.Construction;
 /// </para>
 /// <para>
 /// "What carries what" is not guessed from names. It is the same reading of the model
-/// the Insight engine makes — points welded into joints, lines chained into physical
+/// Section Groups makes — points welded into joints, lines chained into physical
 /// members, members triangulated into assemblies, and every element's weight drained
 /// to the supports by <see cref="LoadPaths"/>. The level that gives each assembly (0
 /// rests on the ground, 1 rests on something at 0, and so on) is the first thing the
